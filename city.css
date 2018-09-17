@@ -1,0 +1,432 @@
+/* CSS For Brad Hodkinson's City Guide page */
+/*
+CSS Checklist
+{X} Change some background colors on your page using one of the color formats we
+  learned in class (name, HEX, RGB (or RGBA), HSL (or HSLA)). You can change the
+  background of the entire page, or the background of some elements, or both!
+{x} Change some text color on your page, using a different color format than you
+  used for the background colors.
+{x} Change the font of some text on your page
+{x} Change the font size of some text on your page
+{x} Change the font weight of some text on your page
+
+{x} Make some text on your page either italic, underlined, or all caps using CSS
+  by targeting an ID or CLASS.
+
+{x} Add some line height to the paragraphs on your page
+{x} Change the alignment of some text- left, right, or justify.
+{x} Change the color of the links on your page, including when they are hovered over
+.
+{x} Change the background color of your form text inputs when they are in focus
+  (i.e. when the user is typing a value)
+
+*/
+
+/* Style for the main body of the page make it so the page fills whole screen*/
+body{
+  margin: 0;
+}
+/* Custom Font */
+@font-face {
+    font-family: oldSchool;
+    src: url(fonts/oldSchool.ttf);
+}
+/* Custom Font */
+@font-face {
+    font-family: lobster;
+    src: url(fonts/lobster.otf);
+}
+/* Allows for the animation of the the title to slide from the left */
+@keyframes slide-left {
+  /* Have the title start hidden off to the right side of the page */
+  from {
+    margin-left: 100%;
+  }
+  /* Slide the title to the left to the location */
+  to {
+    margin-left: 0%;
+  }
+}
+
+/* Create a column item */
+.column {
+    float: left;
+    width: 20%;
+    margin: 0px;
+}
+/* Make sure the content underneath the row stay below it and doesn't merge */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+/* Create a row item */
+.row{
+  align-items: center;
+}
+
+/* Make the title that slides in from the left hidden*/
+div.slide-left {
+  width:100%;
+  overflow:hidden;
+}
+
+/* Navigation bar for the Unordered list */
+.navBar ul{
+  list-style-type: none;
+   margin: 0;
+   padding: 0;
+   overflow: hidden;
+   background-color: #333;
+   position: fixed;
+   top: 0;
+   font-size: 20;
+   width: 100%;
+   z-index: 5;
+}
+/* Make the list items float to the left */
+.navBar ul li{
+  float: left;
+}
+/* Style the list ites */
+.navBar ul li a{
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+/* Make the highlighted list items black on hover if its not the home button */
+li a:hover:not(.active){
+  background-color: black;
+}
+/* Style the home button dark red */
+.active{
+  background-color: darkRed;
+}
+
+/* Make the home page parallax effect. Looked up a tutorial on W3Schools */
+.parallax {
+    /* home background image */
+    background-image: url("images/snohomishBridge.png");
+
+    /* Make the height 100% of the view height */
+    min-height: 100vh;
+
+    /* Create the parallax scrolling effect */
+    /* Make sure image does not move */
+    background-attachment: fixed;
+    /* Center the image */
+    background-position: center;
+    /* Keep the image from repeating */
+    background-repeat: no-repeat;
+    /* Make sure image covers the whole screen */
+    background-size: cover;
+}
+
+/* Style for the main header title */
+.parallax h1 {
+  background-color: RGBA(255,255,255,0.9);
+  color: darkRed;
+  font-size: 70px;
+  font-family: lobster;
+  /* Center the text container */
+  margin: 0 auto;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  /* Make sure the text goes behind the nav bar */
+  z-index: 3;
+  /* Center text */
+  text-align: center;
+  /* Position text */
+  position: absolute;
+  /* Position text in the middle upper screen */
+  top: 30%;
+  left: 50%;
+  /* Position text in the middle */
+  transform: translate(-50%, -50%);
+  /* Animation time for the slide in title */
+  animation: slide-left 3s;
+}
+
+/* Style for mission statement */
+.parallax p {
+  color: white;
+  background-color: RGBA(0,0,0,0.8);
+  font-size: 30px;
+  font-family: lobster;
+  /* Center the text container */
+  margin: 0 auto;
+  /* Make sure the text goes behind the nav bar */
+  z-index: 3;
+  padding: 10px;
+  width:80vw;
+  /* Position text */
+  position: absolute;
+  /* Position text in the middle lower of the screen */
+  top: 55%;
+  left: 10%;
+  mix-blend-mode:normal;
+}
+/* Style for mission inside the mission statement */
+.parallax em {
+  font-size: 40px;
+  padding-right: 15px;
+}
+
+/* Style for the food section */
+.food {
+  background-color: darkRed;
+  box-sizing: border-box;
+  padding-bottom: 20px;
+  margin: 0px;
+}
+
+/* Style for the food section header */
+.food h1 {
+  margin-top: 50px;
+  color: white;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 20px;
+  font-family: lobster;
+  font-size: 40;
+  float: left;
+}
+
+/* Make the food header stay above the food cards */
+.food h1+br {
+  clear: both;
+  padding: 0px;
+}
+/* Style for the food card */
+.foodCard {
+  background-color: white;
+  box-shadow: 0 8px 16px 0 RGBA(0, 0, 0, 0.2);
+  min-width: 300px;
+  max-width: 20vw;
+  padding:10px;
+  margin: 10px;
+  text-align: center;
+  margin-top: 20px;
+}
+/* Style for the food section images */
+.foodCard > img, .foodCard>a img {
+  padding: 10px;
+}
+
+/* Create an image box for the flipping image, looked up tutorial on W3Schools */
+.image-box {
+  background-color: transparent;
+  width: 260px;
+  height: 260px;
+  border: 1px solid #F1F1F1;
+  perspective: 1000px;
+  margin: auto;
+}
+
+/* Create the inside of the box and the 3-d flipping animation*/
+.image-box-inside {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+ /* When image is hovered on rotate 180 degrees to show back side of image */
+.image-box:hover .image-box-inside {
+  transform: rotateY(180deg);
+}
+/* Style the front and back of the image */
+.image-front, .image-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+/* Style the front of the image */
+.image-front {
+  background-color: #BBB;
+  color: black;
+}
+/* Style the back of the image */
+.image-back {
+  background-color: RGB(140,140,140);
+  color: white;
+  transform: rotateY(180deg);
+}
+/* Syle the sub header for the information on the back of the image */
+.image-back > h4 {
+  color: HSLA(0,100%,44%,1);
+  font-size: 20px;
+  font-weight: 400;
+  padding: 0px;
+  padding-top: 5px;
+  margin: 0px;
+}
+/* Style the phone number */
+.image-back > h4+p {
+  padding: 0px;
+  margin: 0px;
+  line-height: 1;
+}
+/* Set the dimensions of the image in the image box for each food spot */
+.image-box img {
+  width: 260px;
+  height: 260px;
+}
+/* Change the color of the social media links to a muted red color on hover */
+.foodCard a>img:hover {
+  filter: brightness(0) invert(1) sepia() saturate(10000%) hue-rotate(290deg);
+}
+
+/* Style for table */
+table {
+  margin: auto;
+}
+/* Style the table header  */
+tr:nth-child(odd) {
+    background-color: darkRed;
+    color: white;
+}
+/* Style the table information */
+tr:nth-child(even) {
+    background-color: #F1F1F1;
+    color: black;
+}
+
+/* Style the activity header */
+.activities h1 {
+  text-align: left;
+  font-family: lobster;
+  padding-top: 45px;
+  padding-bottom: 0px;
+  padding-left: 20px;
+  font-size: 40px;
+}
+/* Style the activity images */
+.activities img {
+  width: 50vw;
+}
+/* Style the activity cards */
+.activity {
+  background-color: lightGray;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px 0 gray;
+  margin: 20px;
+}
+/* Style the header of the activity card */
+.activity h2 {
+  padding-top: 10px;
+  font-size: 30px;
+}
+/* Style the paragraph of the activity card */
+.activity p {
+  padding-bottom: 50px;
+  padding-left: 50px;
+  padding-right: 50px;
+  font-size: 20px;
+  text-align: left;
+}
+/* Style the activity quote */
+.activity blockquote {
+  font-size: 25px;
+  font-style: italic;
+  padding-top: 0px;
+}
+/* Make no padding for the skydive ID, it looked funny without this */
+#skydive {
+  padding-bottom: 0px;
+}
+
+/* Style the map section */
+.map {
+  background-color: darkRed;
+  color: white;
+  margin: 0px;
+  padding: 10px;
+  margin-top: -10px;
+  padding-top: 5px;
+}
+/* Style the header of the map section */
+.map > h1{
+  color: white;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 20px;
+  font-family: lobster;
+  font-size: 40;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  float: left;
+}
+/* Make the map not merge and blend with the next section */
+.map h1+br{
+  clear: both;
+  padding: 0px;
+}
+/* Set size of the google map */
+#google-map {
+  width:90vw;
+  height:80vh;
+}
+
+/* Style for the experience form */
+.experience-form {
+  background-image: url("images/snohomish.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: left;
+  color: white;
+  padding: 20px;
+}
+/* Style for the header of the experience form */
+.experience-form h1 {
+  color: darkRed;
+  padding: 0px;
+  margin: 5px;
+}
+/* Style for the feedback encouragement statement */
+.experience-form p {
+  color: white;
+  background-color: RGBA(0,0,0,0.8);
+  padding: 10px;
+  max-width: 400px;
+  font-size: 20px;
+}
+/* Style for the sub headers of the experience form */
+.experience-form h2 {
+  margin-bottom: 5px;
+}
+/* Text style for the experience form */
+text {
+  font-size: 20px;
+}
+/* Style for the input fields of the form */
+textarea, input {
+  color: white;
+  margin-top: 5px;
+  background-color: RGBA(0,0,0,0.7);
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 10px;
+}
+/* Change the color of the input fields when hovered on */
+textarea:focus, input:focus {
+  background-color: RGBA(10,10,10,0.9);
+}
+/* Set restraints for the textarea */
+textarea {
+  width: 85vw;
+  min-height: 50px;
+  min-width: 250px;
+  max-width: 400px;
+  max-height: 250px;
+}
+
+/* Style for the credits at the bottom of the page */
+.credits {
+  padding: 10px;
+}

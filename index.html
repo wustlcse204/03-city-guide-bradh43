@@ -1,1 +1,404 @@
+<!doctype html>
+<!--
+Brad Hodkinson
+09/13/18
+CSE 204
+Assignment 03 City Guide
+-->
 
+<!--
+HTML Checklist
+{x} Include information that is relevant to your users in an appropriate format
+    (i.e. hours of operation, menus, costs, directions).
+    [x]Include at least one list
+    [x]Include at least one table with appropriate content
+{x} Include images of the city, as well as images of the places you're highlighting.
+    [x](make sure you use height and width attributes to size them correctly)
+    [x]Use the pixlr editor to resize images to appropriate sizes.
+{x} Include an appropriate form on your website. This form doesn't need to do anything,
+  so make it whatever you'd like.
+{x} Structure and format your HTML appropriately, use `<div>` tags to separate major
+  sections and give each section an appropriate `id` and `class` attribute.
+    [x]Create a `<title>` tag
+    [x]Create a `<meta>` tag with the description of your site for search engines.
+    [x]Leave comments within your HTML
+{x} Embed a map such as google maps on your page. (You can do this via any method,
+ look up on google maps how to do this)
+{x} Use links to navigate your website, as well as to link to relevant external websites.
+
+-->
+
+<html>
+  <head>
+    <!-- Set the charachter code -->
+    <meta charset="UTF-8">
+    <!--  Make the webpage look good on mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Refresh the website every hour -->
+    <meta http-equiv="refresh" content="216000">
+    <!-- Set the shortcut icon image -->
+    <link rel="shortcut icon" type="image/png" href="icons/s.png">
+    <!-- Give description of the website -->
+    <meta name="description" content="Tour of things to see and do in Snohomish,
+     including places to eat and activities to do.">
+    <!-- Set keywords for the website -->
+    <meta name="keywords" content="Snohomish,Tour,Guide,Food,Activities">
+    <!-- Set the author -->
+    <meta name="author" content="Brad Hodkinson">
+    <!-- link the custom city style sheet -->
+    <link rel="stylesheet" href="city.css">
+    <!-- Set the tab title -->
+    <title>Snohomish City Guide</title>
+    <!-- JavaScript for Initializing the map API -->
+    <script src="city.js"></script>
+    <!--Load the API from the specified URL
+    * The async attribute allows the browser to render the page while the API loads
+    * The callback parameter executes the initMap() function
+    -->
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDYajbcHCKeFHVuJgG4ISFE1EpE3EtOmaw&callback=initMap">
+    </script>
+  </head>
+  <body id="home">
+    <!-- Cutom navigation bar with link to sections of the page -->
+    <div class="navBar">
+      <ul>
+        <li><a class="active" href="#home">Home</a></li>
+        <li><a href="#food">Food</a></li>
+        <li><a href="#activities">Activities</a></li>
+        <li class="navButton"><a href="#map">Map</a></li>
+      </ul>
+    </div>
+    <!-- Custom parallax effect for the homepage background picture -->
+    <div class="parallax">
+      <!-- Animate the title to slide in from the left of the page -->
+      <div class="slide-left"><h1>Snohomish</h1></div>
+      <!-- Mission statement on the homepage -->
+      <p><em>Mission:</em> Guide to the historical downtown Snohomish, WA. The
+        Antique Capital of the Northwest. </p>
+    </div>
+
+    <!-- Begining of the main content of the website -->
+    <div class="main-content">
+      <center>
+        <!-- Begining of food section -->
+        <div class="food" id="food">
+          <h1>Food</h1>
+          <br/>
+          <div class="row">
+            <!-- Food card for Cat House Pizza -->
+            <div class="foodCard column">
+              <h2>Cat House Pizza</h2>
+              <!-- Star ratings -->
+              <img src="icons/star.png" alt="star"/>
+              <img src="icons/star.png" alt="star"/>
+              <img src="icons/star.png" alt="star"/>
+              <img src="icons/star.png" alt="star"/>
+              <br>
+              <div class="image-box">
+                <div class="image-box-inside">
+                  <div class="image-front">
+                    <img src="images/catHouse.jpeg" alt="Cat House Pizza"/>
+                  </div>
+                  <div class="image-back">
+                    <h3>More Info</h3>
+                    <hr>
+                    <table>
+                      <tr>
+                        <th>Hours</th>
+                        <th>Price</th>
+                      </tr>
+                      <tr>
+                        <th>11:30 am - 10 pm</th>
+                        <th>$$</th>
+                      </tr>
+                    </table>
+                    <h4>Location</h4>
+                    <address>1120 1st St</address>
+                    <address>Snohomish, WA 98290</address>
+                    <h4>Contact</h4>
+                    <p>(360) 863-3626</p>
+                  </div>
+                </div>
+              </div>
+              <br>
+              <!-- Social Media Links -->
+              <a href="https://www.yelp.com/biz/cathouse-pizza-snohomish">
+                <img src="icons/yelp.png" alt="Yelp"/></a>
+              <a href="https://www.facebook.com/cathousepizza/?ref=br_rs">
+                <img src="icons/facebook.png" alt="FaceBook"/></a>
+            </div>
+            <!-- Food Card for Fred's Alehouse -->
+            <div class="foodCard column">
+              <h2>Fred's Alehouse</h2>
+              <!-- Star ratings -->
+              <img src="icons/star.png" alt="star"/>
+              <img src="icons/star.png" alt="star"/>
+              <img src="icons/star.png" alt="star"/>
+              <img src="icons/star.png" alt="star"/>
+              <img src="icons/star.png" alt="star"/>
+              <br>
+              <div class="image-box">
+                <div class="image-box-inside">
+                  <div class="image-front">
+                    <img src="images/freds.jpg" alt="Fred's"/>
+                  </div>
+                  <div class="image-back">
+                    <h3>More Info</h3>
+                    <hr>
+                    <table>
+                      <tr>
+                        <th>Hours</th>
+                        <th>Price</th>
+                      </tr>
+                      <tr>
+                        <th>11:00 am - 11:30 pm</th>
+                        <th>$$</th>
+                      </tr>
+                    </table>
+                    <h4>Location</h4>
+                    <address>1114 First Street</address>
+                    <address>Snohomish, WA 98290</address>
+                    <h4>Contact</h4>
+                    <p>(360) 568-5820</p>
+                  </div>
+                </div>
+              </div>
+              <br>
+              <!-- Social Media Links -->
+              <a href="https://www.yelp.com/biz/freds-rivertown-ale-house-snohomish">
+                <img src="icons/yelp.png" alt="Yelp"/></a>
+              <a href="https://www.facebook.com/fredsrivertown.alehouse/">
+                <img src="icons/facebook.png" alt="FaceBook"/></a>
+            </div>
+            <!-- Food Card for El Paraiso -->
+            <div class="foodCard column">
+              <h2>El Paraiso</h2>
+              <!-- Star ratings -->
+              <img src="icons/star.png" alt="star"/>
+              <img src="icons/star.png" alt="star"/>
+              <img src="icons/star.png" alt="star"/>
+              <img src="icons/star.png" alt="star"/>
+              <br>
+              <div class="image-box">
+                <div class="image-box-inside">
+                  <div class="image-front">
+                    <img src="images/elParasio.jpeg" alt="Cat House Pizza"/>
+                  </div>
+                  <div class="image-back">
+                    <h3>More Info</h3>
+                    <hr>
+                    <table>
+                      <tr>
+                        <th>Hours</th>
+                        <th>Price</th>
+                      </tr>
+                      <tr>
+                        <th>11:30 am - 10 pm</th>
+                        <th>$$</th>
+                      </tr>
+                    </table>
+                    <h4>Location</h4>
+                    <address>1431 Avenue D</address>
+                    <address>Snohomish, WA 98290</address>
+                    <h4>Contact</h4>
+                    <p>(360) 863-5406</p>
+                  </div>
+                </div>
+              </div>
+              <br>
+              <!-- Social Media Links -->
+              <a href="https://www.yelp.com/biz/el-paraiso-mexican-grill-snohomish">
+                <img src="icons/yelp.png" alt="Yelp"/></a>
+              <a href="https://www.facebook.com/ElParaisoMexicanGrillSnohomish/">
+                <img src="icons/facebook.png" alt="FaceBook"/></a>
+            </div>
+            <!-- Food Card for Snohomish Pie Company -->
+            <div class="foodCard column">
+              <h2>Snohomish Pie Co.</h2>
+              <!-- Star ratings -->
+              <img src="icons/star.png" alt="star"/>
+              <img src="icons/star.png" alt="star"/>
+              <img src="icons/star.png" alt="star"/>
+              <img src="icons/star.png" alt="star"/>
+              <br>
+              <div class="image-box">
+                <div class="image-box-inside">
+                  <div class="image-front">
+                    <img src="images/snohomishPie.jpeg" alt="Cat House Pizza"/>
+                  </div>
+                  <div class="image-back">
+                    <h3>More Info</h3>
+                    <hr>
+                    <table>
+                      <tr>
+                        <th>Hours</th>
+                        <th>Price</th>
+                      </tr>
+                      <tr>
+                        <th>11:30 am - 10 pm</th>
+                        <th>$</th>
+                      </tr>
+                    </table>
+                    <h4>Location</h4>
+                    <address>915 1st St</address>
+                    <address>Ste C</address>
+                    <address>Snohomish, WA 98290</address>
+                    <h4>Contact</h4>
+                    <p>(360) 568-3589</p>
+                  </div>
+                </div>
+              </div>
+              <br>
+              <!-- Social Media Links -->
+              <a href="https://www.yelp.com/biz/snohomish-pie-company-snohomish">
+                <img src="icons/yelp.png" alt="Yelp"/></a>
+              <a href="https://www.facebook.com/SnohoPieCo/">
+                <img src="icons/facebook.png" alt="FaceBook"/></a>
+              <a href="https://www.instagram.com/snohomishpieco/">
+                <img src="icons/instagram.png" alt="Instagram"></a>
+            </div>
+          </div>
+        </div>
+        <!-- End of food section -->
+      </center>
+      <center>
+        <!-- Start of activity section -->
+        <div class="activities" id="activities">
+          <h1>Activities</h1>
+          <!-- Antique shopping card -->
+          <div class="activity">
+            <h2>Antique Shopping</h2>
+            <img src="images/antique.jpg" alt="Antique Shopping on 1st Street">
+            <p>Snohomish is known for its historical downtown and is often
+              referred to as the antique capital of the Northwest. Here you will
+              find multiple antique shops filled with hundreds of rare and
+              ancient relics. The antique shops can be found in downtown
+              Snohomish on both first and second street. Second street actually
+               has an antique mall. Pro-tip: parking can be busy so make sure to
+               show up early in order to get a good spot.</p>
+          </div>
+          <!-- Centennial trail card -->
+          <div class="activity">
+            <h2>Centennial Trail</h2>
+            <img src="images/centennialTrail.jpg" alt="Life on the Centenial Trail">
+            <p>The Centennial Trail has over 30 miles of paved trail from
+              Snohomish to Skagit County. The trail is quite roomy averaging
+              about 10 feet wide. This multipurpose trail is good for walking,
+               running, biking, rollerblading, skate boarding, and riding
+               horses. There is even a equestrian dirt trail that runs parallel
+               with most of the trail. There is plenty of picnic tables and
+               benches along the way to take a stop and enjoy a scenic view.
+               There is also shelters and bathrooms spaced out periodically
+               along the trail. The trail currently connects Snohomish, Lake
+               Stevens and Arlington and many points in between. Make sure to
+               follow proper trail etiquette, and note that there has been bear
+                and cougar sighting so make sure to be safe.</p>
+          </div>
+          <!-- Lord Hill card -->
+          <div class="activity">
+            <h2>Lord Hill Regional Park</h2>
+            <img src="images/lordhill.jpg" alt="Lordhill Trail">
+            <p>The Lord Hill regional park is ranked as one of the best places
+               to go trail running in Washington and offers miles of scenic and
+               forestrytrails. The trail is open only during the day, and is
+               good for walking, hiking, trail running, mountain biking and riding
+                horses. There is a designated parking lot for horse trailers.
+                The park has many ponds and lakes as well as excellent view
+                points. There is plenty of wildlife to be seen. There is a large
+                population of birds, animals and fish. The most common animal
+                 found here is the beaver. In addition to this the area is also
+                 inhabited by mice, skunks, deer and the occasional bear and
+                 bobcat. As always, you should exercise proper trail etiquette
+                  and practice the leave no trace model while using the trail.</p>
+          </div>
+          <!-- Skydive Snohomish card -->
+          <div class="activity">
+            <h2>Skydive Snohomish</h2>
+            <img src="images/skydive.jpg" alt="Skydiving in Snohomish">
+            <p id="skydive">Snohomish has its own Airport, and it is ran by Snohomish Flying
+              Services. In additon to offering flights in Airplanes and
+              Helicopters, they also offer Skydiving. The Travel Channel states:</p>
+            <blockquote blockquote cite="http://www.skydivesnohomish.com/">
+              &quotSnohomish is rated as one of the World's Best Places to go
+              Skydiving...&quot
+            </blockquote>
+            <p>If you like adventure and consider yourself an adrenaline junky
+              you can sign up for your first skydive. The Tandem Dive will set
+               you back just over $200.</p>
+          </div>
+        </div>
+        <!-- End of activity section -->
+
+        <!-- Start of map section -->
+        <hr>
+        <div class="map" id="map">
+          <h1>Map</h1>
+          <br>
+          <div id="google-map"></div>
+          <br>
+        </div>
+        <!-- End of google map section -->
+
+        <!-- Start of user experience section -->
+        <div class="experience-form">
+          <h1>Was this page helpful?</h1>
+          <p>Rate your experience. If you have time, please help improve this
+            page by providing feedback.</p>
+          <!-- Start of form -->
+          <form action="#home" method="get">
+            <!-- Get users name -->
+            <text>First Name:</text>
+            <input type="text" name="firstname" placeholder="First Name" required><br>
+            <text>Last Name:</text>
+            <input type="text" name="lastname" placeholder="Last Name" required><br>
+            <!--Have user rate page on a scale from 5 to 1 stars  -->
+            <h2>Rate your experience</h2>
+            <!-- 5 stars -->
+            <input type="radio" name="rating" value="5" checked>
+            <img src="icons/star.png" alt="star"/>
+            <img src="icons/star.png" alt="star"/>
+            <img src="icons/star.png" alt="star"/>
+            <img src="icons/star.png" alt="star"/>
+            <img src="icons/star.png" alt="star"/><br>
+            <!-- 4 stars -->
+            <input type="radio" name="rating" value="4">
+            <img src="icons/star.png" alt="star"/>
+            <img src="icons/star.png" alt="star"/>
+            <img src="icons/star.png" alt="star"/>
+            <img src="icons/star.png" alt="star"/><br>
+            <!-- 3 stars -->
+            <input type="radio" name="rating" value="3">
+            <img src="icons/star.png" alt="star"/>
+            <img src="icons/star.png" alt="star"/>
+            <img src="icons/star.png" alt="star"/><br>
+            <!-- 2 stars -->
+            <input type="radio" name="rating" value="2">
+            <img src="icons/star.png" alt="star"/>
+            <img src="icons/star.png" alt="star"/><br>
+            <!-- 1 stars -->
+            <input type="radio" name="rating" value="1">
+            <img src="icons/star.png" alt="star"/><br>
+            <!-- Get user feedback -->
+            <h2>Provide Feedback</h2>
+            <!-- Text box for user to leave a comment -->
+            <textarea type="message" rows="3" column="60" placeholder="Type feedback here" required>
+            </textarea><br>
+            <!-- Submit form button -->
+            <input type="submit" value="Submit">
+          </form>
+          <!-- End of form -->
+        </div>
+        <!-- End of user experience section -->
+
+        <!-- Start of credits section -->
+        <div class="credits">
+          <p>This website was built and designed by Brad Hodkinson for CSE 204.</p>
+        </div>
+        <!-- End of credits section -->
+
+      </center>
+    </div>
+    <!-- End of the main content of the website -->
+  </body>
+</html>
