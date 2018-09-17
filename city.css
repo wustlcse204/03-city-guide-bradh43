@@ -20,18 +20,19 @@ CSS Checklist
 {x} Change the background color of your form text inputs when they are in focus
   (i.e. when the user is typing a value)
 
+All images were retrieved from google images. 
 */
 
 /* Style for the main body of the page make it so the page fills whole screen*/
 body{
   margin: 0;
 }
-/* Custom Font */
+/* Custom Font from daFont.com */
 @font-face {
     font-family: oldSchool;
     src: url(fonts/oldSchool.ttf);
 }
-/* Custom Font */
+/* Custom Font from daFont.com */
 @font-face {
     font-family: lobster;
     src: url(fonts/lobster.otf);
@@ -107,7 +108,7 @@ li a:hover:not(.active){
 
 /* Make the home page parallax effect. Looked up a tutorial on W3Schools */
 .parallax {
-    /* home background image */
+    /* home background image retrieved from google images */
     background-image: url("images/snohomishBridge.png");
 
     /* Make the height 100% of the view height */
